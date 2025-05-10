@@ -1,0 +1,138 @@
+/* Testimonials Section Styles */
+.testimonials {
+  padding: 100px 0;
+  text-align: center;
+  background-color: white;
+}
+
+.testimonials-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonials h1 {
+  font-size: 48px;
+  margin-bottom: 60px;
+  color: var(--maintext-color);
+  font-weight: 400;
+}
+
+.testimonial-logo {
+  margin-bottom: 40px;
+}
+
+.testimonial-logo img {
+  max-width: 120px;
+}
+
+.testimonials-slider {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  min-height: 200px;
+}
+
+.testimonials-slides {
+  position: relative;
+  width: 100%;
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+.testimonial-text {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  color: var(--secondarytext-color);
+  font-size: 18px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.testimonial-author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.testimonial-author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-author-info h3 {
+  font-size: 16px;
+  margin: 0;
+  color: var(--maintext-color);
+  text-align: left;
+  font-weight: 500;
+}
+
+.testimonial-author-info p {
+  font-size: 14px;
+  margin: 3px 0 0;
+  color: var(--secondarytext-color);
+  text-align: left;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.testimonial-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #D8D8D8;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+.testimonial-dot:hover {
+  transform: scale(1.2);
+}
+
+.testimonial-dot.active {
+  background-color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 60px 0;
+  }
+  
+  .testimonials h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial-text {
+    font-size: 16px;
+  }
+}

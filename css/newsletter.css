@@ -1,0 +1,168 @@
+/* Newsletter Section Styles */
+.nl-section {
+  padding: 200px 0px 100px 0px;
+  background-color: #fff;
+}
+
+.nl-container {
+  max-width: 1210px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+.nl-container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nl-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nl-image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.nl-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 530px;
+}
+
+.nl-overline-text {
+  display: block;
+  font-size: 22px;
+  color: #252B42;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.nl-section .nl-heading {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.nl-form-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+.nl-form-header{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.nl-form-container h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #252B42;
+  font-weight: 700;
+}
+
+.nl-form-container p {
+  margin: 0;
+  font-size: 18px;
+  color: #374754;
+  font-weight: 400;
+}
+
+.nl-form-group {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.nl-subscription-form {
+  width: 100%;
+}
+
+.nl-subscription-form input[type="email"] {
+  flex: 2;
+  padding: 13px 33px;
+  border: 1px solid #E8E8E8;
+  border-radius: 39px;
+  font-size: 15px;
+  color: #18171D;
+  background: #F4F4F4;
+  outline: none;
+}
+
+.nl-subscription-form input[type="email"]:focus {
+  border-color: #2091F9;
+}
+
+.nl-subscription-form input[type="email"]::placeholder {
+  color: #18171D;
+  opacity: 0.8;
+}
+
+.nl-subscription-form .nl-submit-btn {
+  padding: 13px 33px;
+  border: none;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #2091F9;
+  color: #fff;
+  border-radius: 39px;
+  cursor: pointer;
+}
+
+/* Responsive Newsletter */
+@media (max-width: 992px) {
+  .nl-container-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nl-content-wrapper {
+    max-width: 100%;
+  }
+  .nl-form-group {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .nl-subscription-form .nl-submit-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nl-section {
+    padding: 60px 0;
+  }
+
+  .nl-overline-text {
+    font-size: 18px;
+  }
+
+  .nl-form-container h3 {
+    font-size: 18px;
+  }
+
+  .nl-form-container p {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,45 @@
+/* Main CSS File - Imports all section-specific styles */
+
+
+
+
+
+
+/* Import Base Styles */
+@import url('base.css');
+
+/* Import Preloader Styles */
+@import url('preloader.css');
+
+/* Import Header Styles */
+@import url('header.css');
+
+/* Import Hero Section Styles */
+@import url('hero.css');
+
+/* Import Video Section Styles */
+@import url('video.css');
+
+/* Import Features Section Styles */
+@import url('features.css');
+
+/* Import Newsletter Section Styles */
+@import url('newsletter.css');
+
+/* Import Pricing Section Styles */
+@import url('pricing.css');
+
+/* Import Responsive Styles */
+@import url('responsive.css');
+
+/* Import partner section Styles */
+@import url('partner.css');
+
+/* Import Testimonial Styles */
+@import url('testimonial.css');
+
+/* Import Contact Styles */
+@import url('contact.css');
+
+/* Import Footer Styles */
+@import url('footer.css');

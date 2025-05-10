@@ -1,0 +1,20 @@
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box; /* Add box-sizing to include padding in width calculation */
+  }
+}
