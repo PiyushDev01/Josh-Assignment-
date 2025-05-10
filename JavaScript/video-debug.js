@@ -32,22 +32,5 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Monitor video state changes
-        video.addEventListener('play', function() {
-            console.log("Video started playing");
-            console.log("Button class list:", videoPlayBtn.classList.contains('playing') ? 'has playing class' : 'missing playing class');
-            console.log("Button opacity:", window.getComputedStyle(videoPlayBtn).opacity);
-        });
-        
-        video.addEventListener('pause', function() {
-            console.log("Video paused");
-            console.log("Button class list:", videoPlayBtn.classList.contains('playing') ? 'has playing class' : 'missing playing class');
-            console.log("Button opacity:", window.getComputedStyle(videoPlayBtn).opacity);
-        });
-        
-    } else {
-        console.error("Video element or play button not found");
-        if (!videoPlayBtn) console.error("Play button not found");
-        if (!video) console.error("Video element not found");
-    }
+    } 
 });
