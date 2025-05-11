@@ -17,6 +17,136 @@ header {
   transform: translateY(0);
 }
 
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 101;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animated hamburger menu */
+header.mobile-menu-open .mobile-menu-toggle span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+header.mobile-menu-open .mobile-menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+header.mobile-menu-open .mobile-menu-toggle span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 99;
+}
+
+header.mobile-menu-open + .mobile-menu-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* When mobile menu is open, make navigation links take full width */
+header.mobile-menu-open .nav-links {
+  width: 100%;
+  position: static;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  nav {
+    justify-content: space-between;
+  }
+    header ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(37, 43, 66, 0.95);
+    flex-direction: column;
+    z-index: 100;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 0;
+    opacity: 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+    header.mobile-menu-open ul {
+    max-height: 500px;
+    opacity: 1;
+    padding: 25px 0;
+    width: 100%;
+  }
+    header ul li {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    transition-delay: 0.05s;
+    margin: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  header.mobile-menu-open ul li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  header ul li a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 18px;
+  }
+    header.mobile-menu-open ul li:nth-child(1) { transition-delay: 0.1s; }
+  header.mobile-menu-open ul li:nth-child(2) { transition-delay: 0.2s; }
+  header.mobile-menu-open ul li:nth-child(3) { transition-delay: 0.3s; }
+  header.mobile-menu-open ul li:nth-child(4) { transition-delay: 0.4s; }
+  header.mobile-menu-open ul li:nth-child(5) { transition-delay: 0.5s; }
+  
+
+
+  header.mobile-menu-open ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .logo {
+    position: relative;
+    margin-left: 20px;
+  }
+}
+
 header.hidden {
   transform: translateY(-100%);
 }
@@ -146,14 +276,28 @@ header ul li a.active::after {
   .logo {
     flex: 1;
   }
-  
-  header ul {
+    header ul {
     gap: 10px;
     justify-content: flex-start;
   }
   
   header ul li a {
     font-size: 14px;
+  }
+  
+  /* Mobile menu specific styles */
+  header.mobile-menu-open ul {
+    width: 100%;
+  }
+  
+  header.mobile-menu-open ul li a {
+    font-size: 17px;
+    padding: 12px 0;
+  }
+  
+  /* Remove blue underline from mobile menu links */
+  header.mobile-menu-open ul li a::after {
+    display: none;
   }
 }
 
@@ -164,6 +308,7 @@ header ul li a.active::after {
     padding-bottom: 5px;
     -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar for Firefox */
+    width: 100%;
   }
   
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -172,8 +317,25 @@ header ul li a.active::after {
   }
   
   header ul {
-    width: max-content;
-    padding: 0 10px;
+    width: 100%;
+    padding: 0;
+  }
+  
+  /* Mobile menu specific styles for small screens */
+  header.mobile-menu-open ul {
+    padding: 20px 0;
+  }
+    header.mobile-menu-open ul li {
+    width: 100%;
+  }
+  
+  header.mobile-menu-open ul li a {
+    font-size: 16px;
+    padding: 15px 0;
+  }
+  
+  header.mobile-menu-open ul li a::after {
+    display: none;
   }
   
   .social-icons img {

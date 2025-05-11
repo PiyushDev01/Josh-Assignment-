@@ -3,11 +3,163 @@
   .container {
     width: 90%;
   }
+  
+  /* Features section */
+  .features-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature {
+    max-width: 80%;
+    margin-bottom: 40px;
+  }
+  
+  /* Features1 section */
+  .features-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .features-content {
+    padding: 0 20px;
+  }
+  
+  .features-image img {
+    max-width: 90%;
+  }
+  
+  /* Newsletter section */
+  .nl-container-flex {
+    flex-direction: column;
+  }
+  
+  .nl-image-container {
+    margin-bottom: 30px;
+  }
+  
+  /* Partners section */
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+    /* Pricing section */
+  .pricing-plans-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pricing-plan-card {
+    width: 80%;
+    max-width: 335px;
+    margin-bottom: 30px;
+  }
+  
+  .pricing-plan-card.pricing-featured {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding: 50px 30px;
+  }
+  
+  /* Contact section */
+  .contact-content {
+    flex-direction: column;
+  }
+  
+  .contact-form-container, .contact-info {
+    width: 100%;
+  }
+    /* Footer */
+  .footer-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-column {
+    margin-bottom: 30px;
+  }
+  
+  .footer-contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer {
+    height: auto;
+    padding: 80px 0;
+  }
+  
+  .footer-container {
+    min-width: 85%;
+    max-width: 90%;
+    flex-direction: column;
+  }
+  
+  .footer-contact-item {
+    justify-content: center;
+  }
+  
+  .footer-social-icons {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     width: 95%;
+  }
+  /* Navigation */
+  nav {
+    width: 95%;
+    position: relative;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    flex: none;
+    order: 1;
+  }
+  
+  .nav-links {
+    order: 2;
+    position: static;
+    flex: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+    order: 3;
+  }
+  
+  .nav-social-icons {
+    display: none;
+  }
+  
+  /* Hero section */
+  .hero {
+    padding-top: 120px;
+    min-height: 90vh;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+  }
+  
+  .hero-subtitle {
+    font-size: 22px;
+  }
+  
+  /* Testimonials */
+  .testimonial-slide {
+    padding: 30px 20px;
+  }
+  
+  /* Contact */
+  .contact-info-items {
+    flex-direction: column;
+  }
+  
+  .contact-map-container {
+    height: 300px;
   }
 }
 
@@ -15,6 +167,125 @@
   .container {
     width: 100%;
     padding: 0 15px;
-    box-sizing: border-box; /* Add box-sizing to include padding in width calculation */
+    box-sizing: border-box;
+  }
+  
+  /* Logo */
+  .logo img {
+    max-width: 120px;
+  }
+  
+  /* Header adjustments */
+  header {
+    height: 80px;
+  }
+  
+  header ul {
+    top: 80px;
+  }
+  
+  /* Hero section - Make bg image larger */
+  .hero {
+    background-size: 250% auto;
+    padding-top: 100px;
+    min-height: 80vh;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  
+  .hero-cta .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  /* Feature section */
+  .feature {
+    max-width: 100%;
+  }
+  
+  /* Video section */
+  .video-container {
+    max-width: 100%;
+  }
+    /* Partners */
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Pricing */
+  .pricing-plan-card {
+    width: 100%;
+    padding: 30px 15px;
+    max-width: 300px;
+  }
+  
+  .pricing-plan-card.pricing-featured {
+    padding: 40px 15px;
+  }
+  
+  .pricing-price-amount {
+    font-size: 54px;
+  }
+  
+  .pricing-features-list {
+    padding: 0 5px;
+  }
+  
+  .pricing-feature-item {
+    font-size: 13px;
+    padding-right: 10px;
+    padding-left: 25px;
+    background-position: 0 center;
+  }
+  
+  .pricing-section-header h1 {
+    font-size: 36px;
+  }
+  
+  .pricing-section-header p {
+    font-size: 18px;
+  }
+  
+  /* Contact form */
+  .inputfields input, 
+  .inputfields textarea {
+    padding: 10px;
+  }
+    /* Back to top button */
+  .back-to-top {
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 40px 15px;
+  }
+  
+  .footer-column-heading {
+    font-size: 18px;
+  }
+  
+  .footer-links li a,
+  .footer-contact-text {
+    font-size: 14px;
+  }
+  
+  .footer-contact-icon-map img,
+  .footer-contact-icon-phone img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .footer-social-icons {
+    gap: 15px;
   }
 }

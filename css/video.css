@@ -9,20 +9,64 @@
   position: relative;
   width: 100%;
   max-width: 960px;
+  scale: 1.2;
   height: 0;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   margin: 0 auto;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: var(--shadow-lg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #000;
-}
-
-.video-container:hover {
-  transform: translateY(-5px);
   box-shadow: var(--shadow-xl);
 }
+
+@media (max-width: 992px) {
+  .video-container {
+    scale: 1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-section {
+    padding: 30px 0 60px;
+  }
+  
+  .play-icon-circle {
+    min-width: 50px;
+    height: 60px;
+    transform: scale(1.2);
+  }
+  
+  .video-play-btn:hover .play-icon-circle {
+    transform: scale(1.4);
+  }
+}
+
+@media (max-width: 480px) {
+  .video-section {
+    padding: 20px 0 40px;
+  }
+  
+  .video-container {
+    border-radius: 10px;
+  }
+  
+  .play-icon-circle {
+    transform: scale(1);
+    width: 60px;
+    height: 60px;
+  }
+  
+  .video-play-btn:hover .play-icon-circle {
+    transform: scale(1.2);
+  }
+  
+  .video-play-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 
 .video-container video {
   position: absolute;
@@ -69,7 +113,7 @@
   justify-content: center;
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(32, 145, 249, 0.4);
-  overflow: visible;
+  overflow: hidden;
   transform: scale(1.5);
 }
 
@@ -91,16 +135,18 @@
   transform: scale(1.1);
 }
 
-.play-icon, .pause-icon {
+.play-icon {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  z-index: 2;
+}
+
+.pause-icon {
   opacity: 0;
   transition: opacity 0.3s ease;
   position: absolute;
   z-index: 2;
-  
-}
-
-.play-icon {
-  opacity: 1;
 }
 
 .video-play-btn.playing .play-icon {
@@ -113,7 +159,7 @@
 
 .video-container.playing .video-play-btn {
   opacity: 0;
-  transition: opacity var(--transition-normal) var(--transition-timing);
+  transition: opacity 0.3s ease;
 }
 
 .video-container:hover .video-play-btn {

@@ -134,11 +134,14 @@
   .nl-container-flex {
     flex-direction: column;
     text-align: center;
+    gap: 60px;
   }
 
   .nl-content-wrapper {
     max-width: 100%;
+    align-items: center;
   }
+  
   .nl-form-group {
     flex-direction: column;
     max-width: 100%;
@@ -146,23 +149,93 @@
 
   .nl-subscription-form .nl-submit-btn {
     width: 100%;
+    margin-top: 15px;
+  }
+  
+  .nl-form-container {
+    align-items: center;
+  }
+  
+  .nl-section .nl-heading {
+    font-size: 42px;
+    text-align: center;
+  }
+  
+  .nl-image-container {
+    justify-content: center;
+  }
+  
+  .nl-image-container img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nl-section {
+    padding: 100px 0 60px;
+  }
+  
+  .nl-section .nl-heading {
+    font-size: 36px;
+  }
+  
+  .nl-subscription-form input[type="email"] {
+    padding: 13px 20px;
   }
 }
 
 @media (max-width: 480px) {
   .nl-section {
-    padding: 60px 0;
+    padding: 80px 0 50px;
   }
 
   .nl-overline-text {
     font-size: 18px;
+    text-align: center;
+  }
+  
+  .nl-section .nl-heading {
+    font-size: 30px;
+    text-align: center;
   }
 
   .nl-form-container h3 {
     font-size: 18px;
+    text-align: center;
   }
 
   .nl-form-container p {
     font-size: 16px;
+    text-align: center;
+    max-width: 280px;
+  }
+  
+  .nl-container {
+    width: 90%;
+  }
+  
+  .nl-form-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nl-subscription-form input[type="email"],
+  .nl-subscription-form .nl-submit-btn {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 13px 20px;
+  }
+  
+  .nl-subscription-form .nl-submit-btn {
+    margin-top: 12px;
+  }
+  
+  .nl-content-wrapper {
+    align-items: center;
+  }
+  
+  .nl-image-container img {
+    max-width: 90%;
   }
 }

@@ -13,10 +13,47 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Disable scrolling while preloader is active
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const header = document.querySelector('header');
+    const navLinks = document.querySelectorAll('.nav-links ul li a');
+    const menuOverlay = document.querySelector('.mobile-menu-overlay');
+    
+    // Toggle mobile menu
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            header.classList.toggle('mobile-menu-open');
+            
+            // Toggle body scroll when menu is open
+            if (header.classList.contains('mobile-menu-open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    
+    // Close menu when clicking on overlay
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', function() {
+            if (header.classList.contains('mobile-menu-open')) {
+                header.classList.remove('mobile-menu-open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    
+    // Close mobile menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (header.classList.contains('mobile-menu-open')) {
+                header.classList.remove('mobile-menu-open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
     
     // Navigation scroll behavior
-    const header = document.querySelector('header');
     let lastScrollY = window.scrollY;
     let scrollingTimeout;
 

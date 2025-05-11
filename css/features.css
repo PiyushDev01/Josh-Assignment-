@@ -141,12 +141,44 @@
   
   .features-grid {
     flex-direction: column-reverse;
+    gap: 40px;
   }
   
   .features-content, .features-image {
     flex: 1;
     width: 100%;
     text-align: center;
+  }
+  
+  .features-image {
+    justify-content: center;
+  }
+  
+  .features-image img {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .feature {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  
+  .features-container {
+    width: 90%;
+  }
+  
+  .features-list {
+    width: 100%;
+  }
+  
+  .section-title {
+    font-size: 36px;
+  }
+  
+  .section-subtitle {
+    font-size: 18px;
   }
 }
 
@@ -176,5 +208,39 @@
 
   .features-header h1 {
     font-size: 30px;
+  }
+  
+  .features-header p {
+    font-size: 15px;
+    max-width: 280px;
+  }
+  
+  .feature {
+    padding: 5px;
+  }
+  
+  .feature .icon {
+    height: 50px;
+  }
+  
+  .feature .icon img {
+    max-width: 45px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .features-grid {
+    padding: 0 15px;
+  }
+  
+  .features-image img {
+    max-width: 100%;
+  }
+  
+  .features-content {
+    padding: 0 10px;
   }
 }
