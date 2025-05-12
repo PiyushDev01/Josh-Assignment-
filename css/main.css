@@ -43,3 +43,6 @@
 
 /* Import Footer Styles */
 @import url('footer.css');
+
+/* Import Modal Styles */
+@import url('modal.css');

@@ -44,36 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!isFormValid) {
         return;
       }
-      
-      // Form submission simulation
-      const submitBtn = contactForm.querySelector('.submit-btn');
-      const originalBtnText = submitBtn.textContent;
-      
-      // Show loading state
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-      
-      // Simulate server request
-      setTimeout(() => {
-        const formData = {
-          name: nameInput.value.trim(),
-          email: emailInput.value.trim(),
-          message: messageInput.value.trim()
-        };
-        
-        console.log('Form submitted with data:', formData);
-        
-        // Reset form
-        contactForm.reset();
-        formFields.forEach(field => field.classList.remove('focused'));
-        
-        // Restore button
-        submitBtn.textContent = originalBtnText;
-        submitBtn.disabled = false;
-        
-        // Show success message
-        showNotification('Thank you for your message! We will get back to you soon.', 'success');
-      }, 1500);
+        // Form is valid - let the modal.js handle the form submission
+      // Don't do anything else here, as modal.js will take care of it
+      // The validation logic is still useful though
     });
   }
   
@@ -98,8 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
       field.classList.add('focused');
     }
   });
-  
-  // Helper functions
+    // Helper functions
   function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -127,24 +99,5 @@ document.addEventListener('DOMContentLoaded', function() {
     if (errorDiv && errorDiv.className === 'form-error-message') {
       errorDiv.remove();
     }
-  }
-  
-  function showNotification(message, type) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    
-    // Add to document
-    document.body.appendChild(notification);
-    
-    // Animate in
-    setTimeout(() => notification.classList.add('show'), 10);
-    
-    // Remove after delay
-    setTimeout(() => {
-      notification.classList.remove('show');
-      setTimeout(() => notification.remove(), 300);
-    }, 5000);
   }
 });

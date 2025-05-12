@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+  <head>    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Josh Assignment</title>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/modal.css" />
     <script src="./JavaScript/index.js" defer></script>
     <script src="./JavaScript/testimonial.js" defer></script>
     <script src="./JavaScript/contact.js" defer></script>
     <script src="./JavaScript/video-debug.js" defer></script>
+    <script src="./JavaScript/modal.js" defer></script>
   </head>
   <body>
     <!-- Preloader -->
@@ -570,12 +569,11 @@
 
           <div class="contact-content">
             <div class="contact-form-container">
-              <h2 class="contact-form-header">Contact Us</h2>
-              <form class="contact-form">
+              <h2 class="contact-form-header">Contact Us</h2>              <form class="contact-form" novalidate>
                 <div class="inputfields">
-                  <input type="text" placeholder="Your Name" required />
-                  <input type="email" placeholder="Your Email" required />
-                  <textarea placeholder="Your Message" required></textarea>
+                  <input type="text" placeholder="Your Name" required name="name" />
+                  <input type="email" placeholder="Your Email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                  <textarea placeholder="Your Message" required name="message" minlength="10"></textarea>
                 </div>
 
                 <div class="sendbtn">

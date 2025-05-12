@@ -1,0 +1,162 @@
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  -webkit-overflow-scrolling: touch; /* Improves iOS scroll handling */
+  overscroll-behavior: contain; /* Prevents scroll chaining */
+  touch-action: none; /* Disables pinch zoom and other touch actions */
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 450px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+  fill: #666;
+  transition: fill 0.2s ease;
+}
+
+.modal-close:hover svg {
+  fill: #333;
+}
+
+.modal-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #2091F9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.modal-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #252B42;
+  margin-bottom: 10px;
+}
+
+.modal-message {
+  font-size: 16px;
+  color: #374754;
+  margin-bottom: 25px;
+}
+
+.modal-button {
+  background-color: #2091F9;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-button:hover {
+  background-color: #1a7fd6;
+}
+
+/* Modal Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.modal-overlay.active .modal {
+  animation: modalFadeIn 0.3s forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .modal {
+    padding: 25px 20px;
+  }
+  
+  .modal-title {
+    font-size: 20px;
+  }
+  
+  .modal-message {
+    font-size: 14px;
+  }
+  
+  .modal-button {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
