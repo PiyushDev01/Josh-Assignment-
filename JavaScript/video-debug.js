@@ -1,4 +1,3 @@
-// Video debug helper - checks for issues with video functionality
 console.log("Video debug script loaded");
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Play icon found:", !!playIcon);
         console.log("Pause icon found:", !!pauseIcon);
         
-        // Log computed styles for debugging centering issues
         if (playIcon && pauseIcon) {
             const playIconStyle = window.getComputedStyle(playIcon);
             const pauseIconStyle = window.getComputedStyle(pauseIcon);
@@ -31,6 +29,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: pauseIconStyle.opacity
             });
         }
-        
     } 
 });

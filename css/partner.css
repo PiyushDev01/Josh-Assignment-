@@ -1,4 +1,4 @@
-/* Partners section styles */
+
 .partners {
   padding: 100px 0;
   text-align: center;
@@ -119,7 +119,7 @@
   background-color: #1a7edb;
 }
 
-/* Responsive styles */
+
 @media (max-width: 992px) {
   .partners-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -154,3 +154,4 @@
     grid-row: auto;
   }
 }
+
